@@ -1,0 +1,2 @@
+In order to run the app, an Everlive API key is required.
+Once the key is obtained it must be passed to the constructor of the App in App.xaml.cs in the Initializer  of the EverliveProvider.

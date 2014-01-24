@@ -1,12 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using Telerik.Everlive.Sdk.Core.Model.System;
 using Telerik.Everlive.Sdk.Core.Serialization;
 using Telerik.Windows.Cloud;
-using Telerik.Windows.Controls.Cloud;
 
 namespace Telerik.Windows.Controls.Cloud.Sample.Models
 {
@@ -19,6 +14,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
         private Guid pictureFileId;
         private string pictureFileUri;
 
+        [ServerProperty("Picture")]
         public Guid PictureFileId
         {
             get
@@ -111,7 +107,8 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
                 {
                     var now = DateTime.Now;
                     var age = now.Year - this.BirthDate.Year;
-                    if (now.DayOfYear < this.BirthDate.DayOfYear) age--;
+                    if (now.DayOfYear < this.BirthDate.DayOfYear)
+                        age--;
                     return age;
                 }
                 else
@@ -164,11 +161,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
         }
 
         [ServerIgnore]
-        public Stream PictureStream
-        {
-            get;
-            set;
-        }
+        public Stream PictureStream { get; set; }
 
         public string PictureFileUri
         {
@@ -182,7 +175,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
                 return this.pictureFileUri;
             }
         }
-
+        
         #endregion
     }
 }

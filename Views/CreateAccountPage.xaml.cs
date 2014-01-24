@@ -1,19 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using Telerik.Everlive.Sdk.Core.Model.System;
-using Telerik.Everlive.Sdk.Core.Query.Definition.FormData;
-using Telerik.Everlive.Sdk.Core.Result;
 using Telerik.Windows.Controls.Cloud.Sample.Models;
 using Telerik.Windows.Controls.Cloud.Sample.UserControls;
-using Telerik.Windows.Controls.Cloud;
 using Telerik.Windows.Controls.DataForm;
 using Telerik.Windows.Cloud;
 
@@ -33,8 +23,8 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            if (e.NavigationMode == NavigationMode.Refresh || e.NavigationMode
-                == NavigationMode.Back)
+            if (e.NavigationMode == NavigationMode.Refresh || e.NavigationMode ==
+                NavigationMode.Back)
                 return;
 
             if (CloudProvider.Current.IsLoggedIn)

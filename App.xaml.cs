@@ -62,8 +62,11 @@ namespace Telerik.Windows.Controls.Cloud.Sample
 
             CloudProvider.Init(new EverliveProviderSettings() {UseHttps = ConnectionSettings.EverliveUseHttps, ApiKey = ConnectionSettings.EverliveApiKey, UserType = typeof(CustomUser) });
 
-            //EQATEC initialization
-            Analytics = AnalyticsMonitorFactory.CreateMonitor(ConnectionSettings.EqatecProductId);
+           
+                //EQATEC initialization
+                Analytics = AnalyticsMonitorFactory.CreateMonitor(ConnectionSettings.EqatecProductId);
+            
+            
         }
 
         // Code to execute when the application is launching (eg, from Start)

@@ -23,7 +23,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="EVERLIVE SAMPLE" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="BACKEND SERVICES SAMPLE" Style="{StaticResource PhoneTextNormalStyle}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->

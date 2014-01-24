@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
-using Telerik.Everlive.Sdk.Core.Result;
 using Telerik.Windows.Controls.Cloud.Sample.Helpers;
 using Telerik.Windows.Controls.Cloud.Sample.Models;
 

@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Telerik.Everlive.Sdk.Core.Linq.Translators;
-using Telerik.Everlive.Sdk.Core.Query.Definition.Filtering;
-using Telerik.Everlive.Sdk.Core.Query.Definition.Filtering.Simple;
-using Telerik.Everlive.Sdk.Core.Query.Definition.Sorting;
 using Telerik.Everlive.Sdk.Core.Result;
 using Telerik.Windows.Controls.Cloud.Sample.Helpers;
 using Telerik.Windows.Controls.Cloud.Sample.Models;
-using Telerik.Windows.Controls.Cloud;
 using Telerik.Windows.Cloud;
 using Telerik.Everlive.Sdk.Core;
 

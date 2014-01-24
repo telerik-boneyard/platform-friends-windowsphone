@@ -60,41 +60,57 @@ namespace Telerik.Windows.Controls.Cloud.Sample
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
-            CloudProvider.Init(new EverliveProviderSettings() {UseHttps = ConnectionSettings.EverliveUseHttps, ApiKey = ConnectionSettings.EverliveApiKey, UserType = typeof(CustomUser) });
-
+            CloudProvider.Init(new EverliveProviderSettings() { UseHttps = ConnectionSettings.EverliveUseHttps, ApiKey = ConnectionSettings.EverliveApiKey, UserType = typeof(CustomUser) });
            
-                //EQATEC initialization
-                Analytics = AnalyticsMonitorFactory.CreateMonitor(ConnectionSettings.EqatecProductId);
-            
-            
+            //Analytics initialization
+            if (ConnectionSettings.AnalyticsProjectKey != "your-Analytics-project-key-here")
+            {
+                Analytics = AnalyticsMonitorFactory.CreateMonitor(ConnectionSettings.AnalyticsProjectKey);
+            }
+            //else
+            //{
+            //    System.Windows.MessageBox.Show("You will not be able to use Telerik Analytics in this sample app. \r\n If you have a Telerik Analytics project key go to connectionSettings.cs and fill it.", "Analytics project key needed", MessageBoxButton.OK);
+            //}
         }
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            Analytics.Start();
+            if (Analytics != null)
+            {
+                Analytics.Start();
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
-            Analytics.Start();
+            if (Analytics != null)
+            {
+                Analytics.Start();
+            }
         }
 
         // Code to execute when the application is deactivated (sent to background)
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
-            Analytics.Stop();
+            if (Analytics != null)
+            {
+                Analytics.Start();
+            }
         }
 
         // Code to execute when the application is closing (eg, user hit Back)
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
-            Analytics.Stop();
+            if (Analytics != null)
+            {
+                Analytics.Start();
+            }
         }
 
         // Code to execute if a navigation fails
@@ -226,7 +242,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample
                 // ResourceLangauge not being correctly set to a supported language
                 // code or ResourceFlowDirection is set to a value other than LeftToRight
                 // or RightToLeft.
-
                 if (Debugger.IsAttached)
                 {
                     Debugger.Break();

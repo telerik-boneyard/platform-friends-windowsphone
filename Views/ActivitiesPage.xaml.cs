@@ -14,10 +14,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
         {
             InitializeComponent();
             EverliveCloudDataService<Activity> cds = new EverliveCloudDataService<Activity>();
-            cds.Filter = activity => activity.UserId == CloudProvider.Current.CurrentUser.GetId();
             this.activities.CloudDataService = cds;
-            //activities.ItemsType = typeof(Activity);
-            //activities.Sorting = new SortingDefinition("CreatedAt", OrderByDirection.Descending);
         }
 
         private void StackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)

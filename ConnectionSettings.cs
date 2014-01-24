@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Telerik.Windows.Controls.Cloud.Sample
 {
     /// <summary>
-    /// Contains properties used to initialize the Everlive and EQATEC connections.
+    /// Contains properties used to initialize the Backend Services and Analytics connections.
     /// </summary>
     public static class ConnectionSettings
     {
@@ -17,13 +17,18 @@ namespace Telerik.Windows.Controls.Cloud.Sample
         public static string EverliveApiKey = "74c1j3HHDRBCnghs";
 
         /// <summary>
-        /// The EQATEC product identifier.
+        /// The Telerik Analytics project identifier.
         /// </summary>
-        public static string EqatecProductId = "4fff74fe912c4876a233e73f7e83b513";
+        public static string AnalyticsProjectKey = "your-Analytics-project-key-here";
 
         /// <summary> 
         /// Specified whether to use HTTPS when communicating with Everlive. 
         /// </summary> 
         public static bool EverliveUseHttps = false;
+       
+        public static void ThrowError()
+        {
+            throw new ArgumentNullException("Please enter your Backend Services project API key");
+        }
     }
 }

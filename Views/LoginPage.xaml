@@ -36,9 +36,9 @@
                     RegisterNavigationUri="/Views/CreateAccountPage.xaml"
                     x:Name="loginControl">
                     <telerikCloud:RadCloudLogin.LoginProviders>
-                        <telerikCloud:FacebookLoginProvider ClientId="" ClientSecret="" />
-                        <telerikCloud:LiveIDLoginProvider ClientId="" ClientSecret="" />
-                        <telerikCloud:GoogleLoginProvider ClientId="" ClientSecret="" />
+                        <telerikCloud:FacebookLoginProvider ClientId="1408629486049918" ClientSecret="b28a4809c671a47bb5d92592abcbc73e" />
+                        <telerikCloud:LiveIDLoginProvider ClientId="000000004C10D1AF" ClientSecret="q5b0hndptZGcfL6A45EMvoGRCbuPStQu" />
+                        <telerikCloud:GoogleLoginProvider ClientId="406987471724-9lqfke0f0m93qsls4e1phidk4t07g9ji.apps.googleusercontent.com" ClientSecret="zlSXtoQpYebjO_lp_Oxb-Iqj" />
                     </telerikCloud:RadCloudLogin.LoginProviders>
                 </telerikCloud:RadCloudLogin>
             </ScrollViewer>

@@ -25,6 +25,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             //this.friends.RefreshAsync();
+            friends.CloudDataService.GetItemsAsync();
         }
     }
 }

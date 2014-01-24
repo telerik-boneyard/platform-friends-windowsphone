@@ -13,13 +13,19 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
 
         private void loginControl_Success(object sender, EventArgs e)
         {
-            App.Analytics.TrackFeatureStop("Login." + this.GetLoginFeatureName(this.lastProvider));
+            if (App.Analytics != null)
+            {
+                App.Analytics.TrackFeatureStop("Login." + this.GetLoginFeatureName(this.lastProvider));
+            }
         }
 
         private void loginControl_LoggingIn(object sender, LoginEventArgs e)
         {
             this.lastProvider = e.Provider;
-            App.Analytics.TrackFeatureStart("Login." + this.GetLoginFeatureName(this.lastProvider));
+            if (App.Analytics != null)
+            {
+                App.Analytics.TrackFeatureStart("Login." + this.GetLoginFeatureName(this.lastProvider));
+            }
         }
 
         private string GetLoginFeatureName(LoginProvider? provider)

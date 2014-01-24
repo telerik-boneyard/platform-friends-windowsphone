@@ -229,12 +229,26 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
         
         #endregion
         
-        private void RetrieveDisplayName()
+        private async void RetrieveDisplayName()
         {
-            CustomUser result = CloudProvider.Current.CurrentUser as CustomUser;
+            EverliveApp app = CloudProvider.Current.NativeConnection as EverliveApp;
             
-            this.AuthorName = result.DisplayName;
-            //   this.AuthorName = string.Empty;
+            try
+            {
+                var result = await app.WorkWith().Data<CustomUser>().GetById(this.userId).ExecuteAsync();
+                
+                if (!String.IsNullOrEmpty(result.DisplayName))
+                {
+                    this.AuthorName = result.DisplayName;
+                }
+                else
+                {
+                    this.AuthorName = result.Email;
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
         
         private async void RetrieveCommentsCount()

@@ -36,11 +36,18 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
-            var backCount = this.NavigationService.BackStack.Count();
-            for (int i = 0; i < backCount; i++)
+            if (string.IsNullOrWhiteSpace(ConnectionSettings.EverliveApiKey) || ConnectionSettings.EverliveApiKey == "your-api-key-here")
             {
-                this.NavigationService.RemoveBackEntry();
+                System.Windows.MessageBox.Show("Hi there!\n\nBefore you can use this demo, you must insert your API key in the code.\n\nPlease go to ConnectionSettings.cs and put the API key for your Everlive Friends application.", "API Key needed", MessageBoxButton.OK);
+                ConnectionSettings.ThrowError();
+            }
+            else
+            {
+                var backCount = this.NavigationService.BackStack.Count();
+                for (int i = 0; i < backCount; i++)
+                {
+                    this.NavigationService.RemoveBackEntry();
+                }
             }
         }
 

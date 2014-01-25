@@ -168,6 +168,8 @@
     <Content Include="Images\appbar_search.png" />
     <Content Include="Images\appbar_settings.png" />
     <Content Include="Images\appbar_unlike.png" />
+    <Content Include="Images\DateTimePickerCancel.png" />
+    <Content Include="Images\DateTimePickerOK.png" />
     <Content Include="Images\menu_activities.png" />
     <Content Include="Images\menu_friends.png" />
     <Content Include="Images\menu_profile.png" />

@@ -8,14 +8,14 @@ namespace Telerik.Windows.Controls.Cloud.Sample
     public static class ConnectionSettings
     {
         /// <summary> 
-        /// Input your API key below to connect to your own app. 
+        /// Input your Backend Services API key below to connect to your own app. 
         /// </summary> 
-        public static string EverliveApiKey = "your-api-key-here";
+        public static string EverliveApiKey = "hNCCe5CHUKCkwvhO";
 
         /// <summary>
         /// The Telerik Analytics project identifier.
         /// </summary>
-        public static string AnalyticsProjectKey = "your-Analytics-project-key-here";
+        public static string AnalyticsProjectKey = "5f6f78c67d6c4acb92a0b06c30de518e";
 
         /// <summary> 
         /// Specified whether to use HTTPS when communicating with Backend Services. 

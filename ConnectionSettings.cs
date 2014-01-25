@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Telerik.Windows.Controls.Cloud.Sample
 {
@@ -22,13 +18,13 @@ namespace Telerik.Windows.Controls.Cloud.Sample
         public static string AnalyticsProjectKey = "your-Analytics-project-key-here";
 
         /// <summary> 
-        /// Specified whether to use HTTPS when communicating with Everlive. 
+        /// Specified whether to use HTTPS when communicating with Backend Services. 
         /// </summary> 
         public static bool EverliveUseHttps = false;
-       
+
         public static void ThrowError()
         {
-            throw new ArgumentNullException("Please enter your Backend Services project API key");
+            throw new ArgumentException("Please enter your Backend Services project API key");
         }
     }
 }

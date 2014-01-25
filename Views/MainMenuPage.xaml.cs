@@ -30,24 +30,16 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
 
         private void InitializeData()
         {
-
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            if (string.IsNullOrWhiteSpace(ConnectionSettings.EverliveApiKey) || ConnectionSettings.EverliveApiKey == "your-api-key-here")
+            
+            var backCount = this.NavigationService.BackStack.Count();
+            for (int i = 0; i < backCount; i++)
             {
-                System.Windows.MessageBox.Show("Hi there!\n\nBefore you can use this demo, you must insert your API key in the code.\n\nPlease go to ConnectionSettings.cs and put the API key for your Everlive Friends application.", "API Key needed", MessageBoxButton.OK);
-                ConnectionSettings.ThrowError();
-            }
-            else
-            {
-                var backCount = this.NavigationService.BackStack.Count();
-                for (int i = 0; i < backCount; i++)
-                {
-                    this.NavigationService.RemoveBackEntry();
-                }
+                this.NavigationService.RemoveBackEntry();
             }
         }
 
@@ -56,7 +48,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
             var menuItem = (MenuItem)((FrameworkElement)e.OriginalSource).DataContext;
             NavigationService.Navigate(menuItem.PageUrl, menuItem.Value);
         }
-
 
         #region Private Fields and Constants
 

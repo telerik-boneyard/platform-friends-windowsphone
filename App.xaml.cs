@@ -59,58 +59,44 @@ namespace Telerik.Windows.Controls.Cloud.Sample
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
-
+           
             CloudProvider.Init(new EverliveProviderSettings() { UseHttps = ConnectionSettings.EverliveUseHttps, ApiKey = ConnectionSettings.EverliveApiKey, UserType = typeof(CustomUser) });
            
-            //Analytics initialization
-            if (ConnectionSettings.AnalyticsProjectKey != "your-Analytics-project-key-here")
+            // Analytics initialization
+            if (ConnectionSettings.AnalyticsProjectKey != "your-Analytics-project-key-here" || String.IsNullOrEmpty(ConnectionSettings.AnalyticsProjectKey))
             {
                 Analytics = AnalyticsMonitorFactory.CreateMonitor(ConnectionSettings.AnalyticsProjectKey);
             }
-            //else
-            //{
-            //    System.Windows.MessageBox.Show("You will not be able to use Telerik Analytics in this sample app. \r\n If you have a Telerik Analytics project key go to connectionSettings.cs and fill it.", "Analytics project key needed", MessageBoxButton.OK);
-            //}
         }
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            if (Analytics != null)
-            {
-                Analytics.Start();
-            }
+            StartAnalyticsIfNotNull(Analytics);
         }
+  
+        
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
-            if (Analytics != null)
-            {
-                Analytics.Start();
-            }
+            StartAnalyticsIfNotNull(Analytics);
         }
 
         // Code to execute when the application is deactivated (sent to background)
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
-            if (Analytics != null)
-            {
-                Analytics.Start();
-            }
+            StopAnalyticsIfNotNull(Analytics);
         }
 
         // Code to execute when the application is closing (eg, user hit Back)
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
-            if (Analytics != null)
-            {
-                Analytics.Start();
-            }
+            StopAnalyticsIfNotNull(Analytics);
         }
 
         // Code to execute if a navigation fails
@@ -157,6 +143,8 @@ namespace Telerik.Windows.Controls.Cloud.Sample
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
+         
+           
         }
 
         // Do not add any additional code to this method
@@ -168,6 +156,47 @@ namespace Telerik.Windows.Controls.Cloud.Sample
 
             // Remove this handler since it is no longer needed
             RootFrame.Navigated -= CompleteInitializePhoneApplication;
+
+            if (ConnectionSettings.EverliveApiKey == "your-api-key-here" || String.IsNullOrEmpty(ConnectionSettings.EverliveApiKey))
+            {
+                RadMessageBox.Show("API key needed", MessageBoxButtons.OK, 
+                    "Hi there!\n\nBefore you can use this demo, you must insert your API key in the code.\n\nPlease go to ConnectionSettings.cs and put the API key for your Backend Services Friends application.", 
+                    null, 
+                    false, 
+                    false, 
+                    HorizontalAlignment.Center, 
+                    VerticalAlignment.Center,
+                    closedHandler: dialogClosedHandler());
+            }
+        }
+
+        private void StartAnalyticsIfNotNull(IAnalyticsMonitor monitor)
+        {
+            if (monitor != null)
+            {
+                monitor.Start();
+            }
+        }
+
+        private void StopAnalyticsIfNotNull(IAnalyticsMonitor monitor)
+        {
+            if (monitor != null)
+            {
+                monitor.Stop();
+            }
+        }
+  
+        private Action<MessageBoxClosedEventArgs> dialogClosedHandler()
+        {
+            Action<MessageBoxClosedEventArgs> closedHandler =
+                ev =>
+                {
+                    if (ev.Result == DialogResult.OK)
+                    {
+                        ConnectionSettings.ThrowError();
+                    }
+                };
+            return closedHandler;
         }
 
         private void CheckForResetNavigation(object sender, NavigationEventArgs e)

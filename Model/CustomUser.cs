@@ -84,7 +84,14 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
         {
             get
             {
-                return this.displayName;
+                if (this.displayName != null)
+                {
+                    return this.displayName;
+                }
+                else
+                {
+                    return this.Email;
+                }
             }
             set
             {

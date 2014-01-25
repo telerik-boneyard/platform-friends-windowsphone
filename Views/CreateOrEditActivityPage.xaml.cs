@@ -53,7 +53,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
 
         private void OnFailed()
         {
-            System.Windows.MessageBox.Show("Could not create profile.");
+            System.Windows.MessageBox.Show("Could not create activity.");
 
             if (this.NavigationService.CanGoBack)
             {

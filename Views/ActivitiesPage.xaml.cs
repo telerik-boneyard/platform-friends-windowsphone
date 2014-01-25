@@ -5,6 +5,7 @@ using Microsoft.Phone.Controls;
 using Telerik.Windows.Controls.Cloud.Sample.Models;
 using Telerik.Windows.Controls.Cloud.Sample.Helpers;
 using Telerik.Windows.Cloud;
+using Telerik.Windows.Data;
 
 namespace Telerik.Windows.Controls.Cloud.Sample.Views
 {
@@ -14,6 +15,12 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
         {
             InitializeComponent();
             EverliveCloudDataService<Activity> cds = new EverliveCloudDataService<Activity>();
+
+            // activities will be sorted in descending order
+            GenericSortDescriptor<Activity, DateTime> sortDescriptor = new GenericSortDescriptor<Activity, DateTime>(a => a.CreatedAt);
+            sortDescriptor.SortMode = ListSortMode.Descending;
+            this.activities.SortDescriptors.Add(sortDescriptor);
+
             this.activities.CloudDataService = cds;
         }
 

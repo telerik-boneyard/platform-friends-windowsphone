@@ -9,7 +9,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
 {
     public partial class ViewProfilePage : PhoneApplicationPage
     {
-
         public ViewProfilePage()
         {
             InitializeComponent();
@@ -69,7 +68,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
         #region Private Fields and Constants
 
         private CustomUser currentUser;
-
+        
         #endregion
     }
 }

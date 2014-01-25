@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{8ac2688a-d46b-4d17-a90f-9ff7c4bf9474}" Title="Telerik.Windows.Controls.Cloud.Sample" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Telerik.Windows.Controls.Cloud.Sample author" Description="Sample description" Publisher="Telerik.Windows.Controls.Cloud.Sample" PublisherID="{fa65c03c-d86e-4c64-85e0-77dc8a60693e}">
+  <App xmlns="" ProductID="{8ac2688a-d46b-4d17-a90f-9ff7c4bf9474}" Title="Telerik Cloud Sample" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Telerik.Windows.Controls.Cloud.Sample author" Description="This is a sample WP application that showcases various features of several products that are part of Telerik Platform. It is bulit with the .NET SDKs of Backend Services and Analytics and the cloud-enabled Telerik RadControls for WP." Publisher="Telerik.Windows.Controls.Cloud.Sample" PublisherID="{fa65c03c-d86e-4c64-85e0-77dc8a60693e}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -19,7 +19,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>Telerik.Windows.Controls.Cloud.Sample</Title>
+          <Title>Cloud Sample</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

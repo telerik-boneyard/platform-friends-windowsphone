@@ -14,7 +14,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample
         /// <summary> 
         /// Input your API key below to connect to your own app. 
         /// </summary> 
-        public static string EverliveApiKey = "74c1j3HHDRBCnghs";
+        public static string EverliveApiKey = "your-api-key-here";
 
         /// <summary>
         /// The Telerik Analytics project identifier.

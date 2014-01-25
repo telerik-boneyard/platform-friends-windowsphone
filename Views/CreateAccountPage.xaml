@@ -56,7 +56,7 @@
                         <telerikInput:DataField TargetProperty="Username" Grid.Row="1" Grid.Column="1"/>
                         <telerikInput:DataField TargetProperty="Password" telerikDataForm:PasswordField.IsPasswordField="True" Grid.Row="2" Grid.Column="1"/>
                         <telerikInput:DataField TargetProperty="Gender" Grid.Row="3" Grid.ColumnSpan="2"/>
-                        <telerikInput:DataField TargetProperty="BirthDate" Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <telerikInput:DataField TargetProperty="BirthDate" Grid.Row="4" Grid.ColumnSpan="2" />
                         <telerikInput:DataField TargetProperty="About" Grid.Row="5" Grid.ColumnSpan="2"/>
                     </Grid>
                     <telerikCloud:RadCloudDataForm.ApplicationBarInfo>

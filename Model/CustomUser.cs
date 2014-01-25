@@ -2,6 +2,7 @@
 using System.IO;
 using Telerik.Everlive.Sdk.Core.Serialization;
 using Telerik.Windows.Cloud;
+using Telerik.Windows.Controls.DataForm;
 
 namespace Telerik.Windows.Controls.Cloud.Sample.Models
 {
@@ -64,6 +65,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
             }
         }
 
+        [ValueRangeAttribute(MinValue="1/1/1901", MaxValue="1/1/2014")]
         public DateTime BirthDate
         {
             get

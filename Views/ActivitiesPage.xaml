@@ -42,7 +42,7 @@
                             <TextBlock Text="{Binding CreatedDate}" FontSize="16" Foreground="{StaticResource PhoneSubtleBrush}" VerticalAlignment="Bottom" />
                             <TextBlock Text="{Binding Text}" FontSize="{StaticResource PhoneFontSizeSmall}" TextWrapping="Wrap" FontStyle="Italic" Margin="0 8 0 0" />
                             <Image Stretch="Uniform" Margin="0 8 0 0" Source="{Binding PictureFileUri}" />
-                            <TextBlock Text="{Binding LikesAndCommentsCount}" Margin="0 8 0 0" FontSize="16" Foreground="{StaticResource PhoneSubtleBrush}" />
+                            <TextBlock Text="{Binding CommentsCountString}" Margin="0 8 0 0" FontSize="16" Foreground="{StaticResource PhoneSubtleBrush}" />
                         </StackPanel>
                     </DataTemplate>
                 </telerikCloud:RadCloudJumpList.ItemTemplate>

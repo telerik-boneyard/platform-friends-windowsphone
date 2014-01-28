@@ -15,7 +15,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample
         /// <summary>
         /// The Telerik Analytics project identifier.
         /// </summary>
-        public static string AnalyticsProjectKey = "your-Analytics-project-key-here";
+        public static string AnalyticsProjectKey = "your-analytics-project-key-here";
 
         /// <summary> 
         /// Specified whether to use HTTPS when communicating with Backend Services. 

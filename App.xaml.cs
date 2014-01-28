@@ -63,7 +63,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample
             CloudProvider.Init(new EverliveProviderSettings() { UseHttps = ConnectionSettings.EverliveUseHttps, ApiKey = ConnectionSettings.EverliveApiKey, UserType = typeof(CustomUser) });
            
             // Analytics initialization
-            if (ConnectionSettings.AnalyticsProjectKey != "your-Analytics-project-key-here" || String.IsNullOrEmpty(ConnectionSettings.AnalyticsProjectKey))
+            if (ConnectionSettings.AnalyticsProjectKey != "your-analytics-project-key-here" || String.IsNullOrEmpty(ConnectionSettings.AnalyticsProjectKey))
             {
                 Analytics = AnalyticsMonitorFactory.CreateMonitor(ConnectionSettings.AnalyticsProjectKey);
             }
@@ -75,8 +75,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample
         {
             StartAnalyticsIfNotNull(Analytics);
         }
-  
-        
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
@@ -143,8 +141,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
-         
-           
         }
 
         // Do not add any additional code to this method
@@ -156,17 +152,14 @@ namespace Telerik.Windows.Controls.Cloud.Sample
 
             // Remove this handler since it is no longer needed
             RootFrame.Navigated -= CompleteInitializePhoneApplication;
-
+            
             if (ConnectionSettings.EverliveApiKey == "your-api-key-here" || String.IsNullOrEmpty(ConnectionSettings.EverliveApiKey))
             {
-                RadMessageBox.Show("API key needed", MessageBoxButtons.OK, 
-                    "Hi there!\n\nBefore you can use this demo, you must insert your API key in the code.\n\nPlease go to ConnectionSettings.cs and put the API key for your Backend Services Friends application.", 
-                    null, 
-                    false, 
-                    false, 
-                    HorizontalAlignment.Center, 
-                    VerticalAlignment.Center,
-                    closedHandler: dialogClosedHandler());
+                System.Windows.MessageBox.Show(
+                    "Hi there!\n\nBefore you can use this demo, you must insert your API key in the code.\n\nPlease go to ConnectionSettings.cs and put the API key for your Backend Services Friends application.",
+                    "API key needed",
+                    MessageBoxButton.OK);
+                ConnectionSettings.ThrowError();
             }
         }
 
@@ -184,19 +177,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample
             {
                 monitor.Stop();
             }
-        }
-  
-        private Action<MessageBoxClosedEventArgs> dialogClosedHandler()
-        {
-            Action<MessageBoxClosedEventArgs> closedHandler =
-                ev =>
-                {
-                    if (ev.Result == DialogResult.OK)
-                    {
-                        ConnectionSettings.ThrowError();
-                    }
-                };
-            return closedHandler;
         }
 
         private void CheckForResetNavigation(object sender, NavigationEventArgs e)

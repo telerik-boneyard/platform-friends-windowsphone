@@ -6,6 +6,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
     public partial class LoginPage : PhoneApplicationPage
     {
         private LoginProvider? lastProvider;
+
         public LoginPage()
         {
             InitializeComponent();

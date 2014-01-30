@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using Telerik.Everlive.Sdk.Core.Model.Interfaces;
@@ -67,26 +66,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
             }
         }
         
-        ///// <summary>
-        ///// Contains the IDs of the users who liked the activity.
-        ///// </summary>
-        //private List<Guid> likes;
-        
-        //public List<Guid> Likes
-        //{
-        //    get
-        //    {
-        //        return this.likes;
-        //    }
-        //    set
-        //    {
-        //        this.SetProperty(ref this.likes, value, "Likes");
-        //        this.OnPropertyChanged(new PropertyChangedEventArgs("LikesCount"));
-        //        this.OnPropertyChanged(new PropertyChangedEventArgs("LikesCountString"));
-        //        this.OnPropertyChanged(new PropertyChangedEventArgs("LikesAndCommentsCount"));
-        //    }
-        //}
-        
         #endregion
         
         #region ViewModel Properties
@@ -118,38 +97,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
             }
         }
         
-        //[ServerIgnore]
-        //public int LikesCount
-        //{
-        //    get
-        //    {
-        //        int count = 0;
-        //        if (this.Likes != null)
-        //        {
-        //            count = this.Likes.Count;
-        //        }
-                
-        //        return count;
-        //    }
-        //}
-        
-        //[ServerIgnore]
-        //public string LikesCountString
-        //{
-        //    get
-        //    {
-        //        int count = this.LikesCount;
-        //        if (count == 1)
-        //        {
-        //            return "1 like";
-        //        }
-        //        else
-        //        {
-        //            return String.Format("{0} likes", count);
-        //        }
-        //    }
-        //}
-        
         [ServerIgnore]
         public int CommentsCount
         {
@@ -170,7 +117,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
                 this.commentsCount = value;
                 this.OnPropertyChanged(new PropertyChangedEventArgs("CommentsCount"));
                 this.OnPropertyChanged(new PropertyChangedEventArgs("CommentsCountString"));
-                //this.OnPropertyChanged(new PropertyChangedEventArgs("LikesAndCommentsCount"));
             }
         }
         
@@ -191,15 +137,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
                 }
             }
         }
-        
-        //[ServerIgnore]
-        //public string LikesAndCommentsCount
-        //{
-        //    get
-        //    {
-        //        return this.LikesCountString + ", " + this.CommentsCountString;
-        //    }
-        //}
         
         [ServerIgnore]
         public Stream PictureStream { get; set; }
@@ -258,7 +195,6 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
             try
             {
                 int count = await app.WorkWith().Data<Comment>().GetCount().Where(comment => comment.ActivityId == this.Id).ExecuteAsync();
-                
                 this.CommentsCount = count;
             }
             catch (Exception ex)

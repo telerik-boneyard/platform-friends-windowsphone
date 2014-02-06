@@ -33,6 +33,10 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
                 }
                 this.RefreshApplicationBar();
             }
+            else if (e.NavigationMode == System.Windows.Navigation.NavigationMode.Back)
+            {
+                this.DataContext = CloudProvider.Current.CurrentUser;
+            }
         }
 
         private void RefreshApplicationBar()

@@ -61,11 +61,12 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
                 {
                     this.gender = value;
                     this.OnPropertyChanged("Gender");
+                    this.OnPropertyChanged("GenderString");
                 }
             }
         }
 
-        [ValueRangeAttribute(MinValue="1/1/1901", MaxValue="1/1/2014")]
+        [ValueRangeAttribute(MinValue = "1/1/1901", MaxValue = "1/1/2014")]
         public DateTime BirthDate
         {
             get
@@ -78,6 +79,9 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Models
                 {
                     this.birthDate = value;
                     this.OnPropertyChanged("BirthDate");
+                    this.OnPropertyChanged("BirthDateString");
+                    this.OnPropertyChanged("Age");
+                    this.OnPropertyChanged("AgeString");
                 }
             }
         }

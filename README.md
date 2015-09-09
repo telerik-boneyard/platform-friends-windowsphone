@@ -5,7 +5,7 @@ position: 1
 publish: true
 page_title: Telerik Friends Sample App for Windows Phone | Telerik Platform
 description: 
-tags: Sample App, Application, Windows Phone, C#, dotnet, .NET, BaaS, mBaaS, Social, Analytics, Social Login, AD FS
+tags: Sample App, Application, Windows Phone, C#, dotnet, .NET, BaaS, mBaaS, Social, Analytics, Social Login
 ---
 
 # Friends Sample App for Windows Phone
@@ -24,7 +24,7 @@ The Telerik Friends sample app showcases these features and SDKs:
 - Cloud data access (Telerik Backend Services)
 - Working with files (Telerik Backend Services)
 - User registration and authentication (Telerik Backend Services)
-- Authentication with external providers (Facebook, Google, etc.) (Telerik Backend Services)
+- Authentication with social login providers (Facebook, Google, etc.) (Telerik Backend Services)
 - Using custom user account fields (Telerik Backend Services)
 - Basic app analytics (Telerik Analytics)
 - Tracking feature usage (Telerik Analytics)
@@ -34,7 +34,8 @@ To implement all the features listed above, the sample app utilizes the followin
 - Telerik Backend Services - this is where all data, files, and user accounts are stored in the cloud
 - Telerik Backend Services .NET SDK - to connect the app to Telerik Backend Services
 - Telerik Analytics - used to store analytics data in the cloud
-- ???Telerik Mobile Testing - used to implement tests for the mobile app
+- Telerik Analytics .NET SDK - to connect the app with Telerik Analytics
+
 
 ## Requirements
 
@@ -81,7 +82,7 @@ To demonstrate social login, we've pre-initialized the sample to use a purpose-b
 1. Go to your app.
 2. Click the Backend Services project that you are using.
 3. Navigate to **Users > Authentication**.
-4. Click the Facebook check box.
+4. Ensure that the Facebook box is checked.
 
 > Note that if you intend to use the code for a production app you need to set up your own Facebook application and adjust the Facebook app ID as follows:
 	
@@ -89,14 +90,14 @@ To demonstrate social login, we've pre-initialized the sample to use a purpose-b
 2. Find the `telerikCloud:FacebookLoginProvider` tag.
 3. Replace the `ClientId` and `ClientSecret` attribute values with your Facebook app values.
 
-### (Optional) Google
+### (Optional) Google Client ID
 
 To demonstrate social login, we've pre-initialized the sample to use a Google Client ID owned by Telerik. However, you still need to enable Google integration in the Telerik Platform portal:
 
 1. Go to your app.
 2. Click the Backend Services project that you are using.
 3. Navigate to **Users > Authentication**.
-4. Click the Google check box.
+4. Ensure that the Google box is checked.
 
 > Note that if you intend to use the code for a production app you need to set up your own Google Client ID and adjust the code as follows:
 
@@ -104,14 +105,14 @@ To demonstrate social login, we've pre-initialized the sample to use a Google Cl
 2. Find the `telerikCloud:GoogleLoginProvider` tag.
 3. Replace the `ClientId` and `ClientSecret` attribute values with your Google app values.
 
-### (Optional) Windows Live
+### (Optional) Microsoft Account
 
-To demonstrate social login, we've pre-initialized the sample to use a  Microsoft Account Client ID owned by Telerik. However, you still need to enable Google integration in the Telerik Platform portal:
+To demonstrate social login, we've pre-initialized the sample to use a  Microsoft Account Client ID owned by Telerik. However, you still need to enable Microsoft Account integration in the Telerik Platform portal:
 
 1. Go to your app.
 2. Click the Backend Services project that you are using.
 3. Navigate to **Users > Authentication**.
-4. Click the Windows Live check box.
+4. Ensure that the Windows Live box is checked.
 
 > Note that if you intend to use the code for a production app you need to set up your own Microsoft Account Client ID and adjust the code as follows:
 
@@ -123,7 +124,7 @@ To demonstrate social login, we've pre-initialized the sample to use a  Microsof
 
 Once the app is configured, click **Run** in Visual Studio to run it either on a real device or in an emulator.
 
-> Make sure that the emulator or the device that you are using has Internet connectivity when running the sample.
+> Ensure that the emulator or the device that you are using has Internet connectivity when running the sample.
  
 ## Screenshots
 ???

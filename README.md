@@ -125,6 +125,4 @@ To demonstrate social login, we've pre-initialized the sample to use a  Microsof
 Once the app is configured, click **Run** in Visual Studio to run it either on a real device or in an emulator.
 
 > Ensure that the emulator or the device that you are using has Internet connectivity when running the sample.
- 
-## Screenshots
-???
+

@@ -1,12 +1,3 @@
----
-title: Telerik Friends Sample App for Windows Phone
-slug: sample-backend-services-friends-windows-phone
-position: 1
-publish: true
-page_title: Telerik Friends Sample App for Windows Phone | Telerik Platform
-description: 
-tags: Sample App, Application, Windows Phone, C#, dotnet, .NET, BaaS, mBaaS, Social, Analytics, Social Login
----
 
 # Friends Sample App for Windows Phone
 

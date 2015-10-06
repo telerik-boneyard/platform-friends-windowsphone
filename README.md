@@ -4,6 +4,7 @@
 <a href="https://github.com/telerik/platform-friends-windowsphone" target="_blank"><img style="padding-left:20px" src="http://docs.telerik.com/platform/appbuilder/sample-apps/images/get-github.png" alt="Get from GitHub" title="Get from GitHub"></a>
 
 * [Overview](#overview)
+* [Screenshots](#screenshots)
 * [Requirements](#requirements)
 * [Configuration](#configuration)
 * [Running the Sample](#running-the-sample)
@@ -29,6 +30,11 @@ To implement all the features listed above, the sample app utilizes the followin
 - Telerik Analytics - used to store analytics data in the cloud
 - Telerik Analytics .NET SDK - to connect the app with Telerik Analytics
 
+## Screenshots
+
+Login Screen|Main Menu|Activity Details|Friends View
+---|---|---|---
+![Login Screen](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-login-screen.png)|![Activities stream view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-menu.png)|![Activity details view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-activitiy-details.png)|![Activity details view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-friends.png)
 
 ## Requirements
 

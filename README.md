@@ -34,7 +34,7 @@ To implement all the features listed above, the sample app utilizes the followin
 
 Login Screen|Main Menu|Activity Details|Friends View
 ---|---|---|---
-![Login Screen](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-login-screen.png)|![Activities stream view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-menu.png)|![Activity details view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-activitiy-details.png)|![Activity details view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-friends.png)
+![Login Screen](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-login-screen.png)|![Main menu](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-menu.png)|![Activity details view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-activity-details.png)|![Friends view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-friends.png)
 
 ## Requirements
 

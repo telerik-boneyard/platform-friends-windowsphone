@@ -1,62 +1,127 @@
-Friends Sample App for Windows Phone
-=============================
-This repository contains the [Friends sample app](http://docs.telerik.com/platform/backend-services/samples/friends/friends-sample) for Windows Phone. The Friends app is a sample mobile app showcasing the integration of Telerik Platform services into a Windows Phone appllication. To download the source code, just click on the "Download ZIP" button.
 
-## Showcased features and SDKs
+# Friends Sample App for Windows Phone
 
-Here is a list of the features that are showcased in the Friends sample app:
+<a href="https://github.com/telerik/platform-friends-windowsphone" target="_blank"><img style="padding-left:20px" src="http://docs.telerik.com/platform/appbuilder/sample-apps/images/get-github.png" alt="Get from GitHub" title="Get from GitHub"></a>
+
+* [Overview](#overview)
+* [Screenshots](#screenshots)
+* [Requirements](#requirements)
+* [Configuration](#configuration)
+* [Running the Sample](#running-the-sample)
+
+## Overview
+
+This repository contains the Telerik Friends app for Windows Phone. It is a sample mobile app demonstrating how to integrate a large gamut of Telerik Platform services into a native Windows Phone mobile application.
+
+The Telerik Friends sample app showcases these features and SDKs:
 
 - Cloud data access (Telerik Backend Services)
 - Working with files (Telerik Backend Services)
 - User registration and authentication (Telerik Backend Services)
-- Authentication with external providers (Facebook, Google, etc.) (Telerik Backend Services)
-- Custom fields for users (Telerik Backend Services)
+- Authentication with social login providers (Facebook, Google, etc.) (Telerik Backend Services)
+- Using custom user account fields (Telerik Backend Services)
 - Basic app analytics (Telerik Analytics)
-- Tracking custom events (Telerik Analytics)
+- Tracking feature usage (Telerik Analytics)
 
-To implement the features listed above, the sample app utilizes the following products:
+To implement all the features listed above, the sample app utilizes the following Telerik products and SDKs:
 
-- Telerik Backend Services - this is where all the data, files and users are stored in the cloud.
-- Telerik Analytics - used to store analytics data in the cloud.
-- {{TelerikMobileTesting}} - used to implement tests for the mobile app(not available on all platforms).
+- Telerik Backend Services - this is where all data, files, and user accounts are stored in the cloud
+- Telerik Backend Services .NET SDK - to connect the app to Telerik Backend Services
+- Telerik Analytics - used to store analytics data in the cloud
+- Telerik Analytics .NET SDK - to connect the app with Telerik Analytics
 
-## Requirements  
+## Screenshots
 
-The following is a list of requirements for the sample app:
+Login Screen|Main Menu|Activity Details|Friends View
+---|---|---|---
+![Login Screen](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-login-screen.png)|![Activities stream view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-menu.png)|![Activity details view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-activitiy-details.png)|![Activity details view](https://raw.githubusercontent.com/telerik/platform-friends-windowsphone/master/screenshots/wp-friends.png)
 
-- **Active Telerik Platform account**  
-To use this sample app you must have an active Telerik Platform account. Depending on your license you may not be able to use all features of the app. For more information on what is included in the different editions, please check out the pricing page for the respective product. All features included in the sample app will work in the free trial period.
+## Requirements
 
-- **Compatible Visual Studio version**  
+Before you begin, you need to ensure that you have the following:
+
+- **An active Telerik Platform account**
+Ensure that you can log in to a Telerik Platform account. This can be a free trial account. Depending on your license you may not be able to use all app features. For more information on what is included in the different editions, check out the pricing page. All features included in the sample app work during the free trial period.
+
+- **A compatible Microsoft Visual Studio version**
 Visual Studio 2010 or later must be installed on your computer.
 
-- **Windows Phone SDK 8.0**  
-The sample app comes as a Windows Phone 8 Application project. This means that you must have the Windows Phone SDK 8.0 installed in order to open the project in Visual Studio.
+- **Windows Phone SDK 8.0**
+The sample app comes as a Windows Phone 8 Application project. This means that you must have the Windows Phone SDK 8.0 installed to open the project in Microsoft Visual Studio.
 
-## Configuring the sample app
+## Configuration
+
 The Friends sample app comes fully functional, but to see it in action you must link it to your own Telerik Platform account.
 
 What you need to set:
 
-- **API key for Telerik Backend Services**  
-This links the sample mobile app to a project in Telerik Backend Services. When you activate Telerik Backend Services a Friends sample project is created for you automatically. It has necessary structure defined and some data pre-filled. You must use its API key.  
-To set the API key in the code, open the **ConnectionSettings.cs** file and change the value there.
+### API Key for Telerik Backend Services
+
+This is a unique string that links the sample mobile app to a project in Telerik Backend Services where all the data is read from/saved. When creating the project, you must base it on the Friends sample Backend Services project that has all the necessary data prepopulated.
+
+You must use this project's API key. To set it in the app:
+
+1. Open the `ConnectionSettings.cs` file.
+2. Find the `public static string EverliveApiKey = "your-api-key-here";` line. 
+3. Replace `your-api-key-here` with the API Key of your Friends Backend Services project.
+
 > If you happen to break the structure of the automatically generated Friends sample project, you can delete it and a fresh instance will be created again for you automatically. Alternatively, you could create a new project and choose to start from a Friends template, instead of starting from a blank project.
 
-- [optional] **Project ID for Telerik Analytics**  
-This step is optional, it links the sample mobile app to a Telerik Analytics project in your account. If you do not set this the sample will still work, but no analytics data will collected.  
-To set the Analytics project ID in the code, open the **ConnectionSettings.cs** file and change the value there.
+### (Optional) Project Key for Telerik Analytics
 
-- [optional] **Facebook app ID**  
-The sample app allows users to register using their Facebook account. We've pre-initialized the sample to use a Facebook app created by Telerik for the purpose. If you want, you can set it to use your own Facebook application by adjusting the value in **LoginPage.xaml**.
+This is a unique string that links the sample mobile app to a Telerik Analytics project in your account. If you do not set this the sample will still work, but no analytics data will be collected.
+	
+1. Open the `ConnectionSettings.cs` file.
+2. Find the `public static string AnalyticsProjectKey = "your-analytics-project-key-here";` line.
+3. Replace `your-analytics-project-key-here` with the Project Key of your Friends Analytics project.
 
-- [optional] **Google**  
-The sample app allows users to register using their Google account. We've pre-initialized the sample to use a Google app created by Telerik for the purpose. If you want, you can set it to use your own Google application by adjusting the value in **LoginPage.xaml**.
+### (Optional) Facebook App ID
+To demonstrate social login, we've pre-initialized the sample to use a purpose-built Facebook app by Telerik. However, you still need to enable Facebook integration in the Telerik Platform portal:
 
-- [optional] **Windows Live**  
-The sample app allows users to register using their Live account. We've pre-initialized the sample to use a Live ID app created by Telerik for the purpose. If you want, you can set it to use your own Live ID application by adjusting the value in **LoginPage.xaml**.
+1. Go to your app.
+2. Click the Backend Services project that you are using.
+3. Navigate to **Users > Authentication**.
+4. Ensure that the Facebook box is checked.
 
-## Running the sample app
-Once the app is configured as described in the previous section, you can run it either on a real device or on an emulator. Just click "Run" in Visual Studio.
+> Note that if you intend to use the code for a production app you need to set up your own Facebook application and adjust the Facebook app ID as follows:
+	
+1. Open the `Views/LoginPage.xaml` file.
+2. Find the `telerikCloud:FacebookLoginProvider` tag.
+3. Replace the `ClientId` and `ClientSecret` attribute values with your Facebook app values.
 
-> Make sure the emulator or the device you use have working Internet connection when running the sample. Internet connection is necessary in order to connect to the cloud.
+### (Optional) Google Client ID
+
+To demonstrate social login, we've pre-initialized the sample to use a Google Client ID owned by Telerik. However, you still need to enable Google integration in the Telerik Platform portal:
+
+1. Go to your app.
+2. Click the Backend Services project that you are using.
+3. Navigate to **Users > Authentication**.
+4. Ensure that the Google box is checked.
+
+> Note that if you intend to use the code for a production app you need to set up your own Google Client ID and adjust the code as follows:
+
+1. Open the `Views/LoginPage.xaml` file.
+2. Find the `telerikCloud:GoogleLoginProvider` tag.
+3. Replace the `ClientId` and `ClientSecret` attribute values with your Google app values.
+
+### (Optional) Microsoft Account
+
+To demonstrate social login, we've pre-initialized the sample to use a  Microsoft Account Client ID owned by Telerik. However, you still need to enable Microsoft Account integration in the Telerik Platform portal:
+
+1. Go to your app.
+2. Click the Backend Services project that you are using.
+3. Navigate to **Users > Authentication**.
+4. Ensure that the Windows Live box is checked.
+
+> Note that if you intend to use the code for a production app you need to set up your own Microsoft Account Client ID and adjust the code as follows:
+
+1. Open the `Views/LoginPage.xaml` file.
+2. Find the `telerikCloud:LiveIDLoginProvider` tag.
+3. Replace the `ClientId` and `ClientSecret` attribute values with your Microsoft Account app values.
+
+## Running the Sample
+
+Once the app is configured, click **Run** in Visual Studio to run it either on a real device or in an emulator.
+
+> Ensure that the emulator or the device that you are using has Internet connectivity when running the sample.
+

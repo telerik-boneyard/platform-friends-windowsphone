@@ -1,5 +1,5 @@
 
-# Friends Sample App for Windows Phone
+# Telerik Friends Sample App for Windows Phone
 
 <a href="https://github.com/telerik/platform-friends-windowsphone" target="_blank"><img style="padding-left:20px" src="http://docs.telerik.com/platform/appbuilder/sample-apps/images/get-github.png" alt="Get from GitHub" title="Get from GitHub"></a>
 

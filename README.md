@@ -25,7 +25,7 @@ The Telerik Friends sample app showcases these features and SDKs:
 To implement all the features listed above, the sample app utilizes the following Telerik SDKs:
 
 - [Telerik Backend Services .NET SDK](http://docs.telerik.com/platform/backend-services/dotnet/getting-started-dotnet-sdk)&mdash;to connect the app to Telerik Platform
-- Telerik Analytics .NET SDK&mdash;to connect the app to Telerik Platform
+- [Telerik Analytics .NET SDK](http://docs.telerik.com/platform/analytics/sdk/dotnet/)&mdash;to connect the app to Telerik Platform
 
 # Screenshots
 

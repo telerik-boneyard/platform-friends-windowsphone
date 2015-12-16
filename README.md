@@ -14,17 +14,17 @@ This repository contains the Telerik Friends app for Windows Phone. It is a samp
 
 The Telerik Friends sample app showcases these features and SDKs:
 
-- Cloud data access (Telerik Backend Services)
-- Working with files (Telerik Backend Services)
-- User registration and authentication (Telerik Backend Services)
-- Authentication with social login providers (Facebook, Google, etc.) (Telerik Backend Services)
+- [Cloud data](http://docs.telerik.com/platform/backend-services/dotnet/data/introduction) access (Telerik Backend Services)
+- Working with [files](http://docs.telerik.com/platform/backend-services/dotnet/files/introduction) (Telerik Backend Services)
+- User [registration](http://docs.telerik.com/platform/backend-services/dotnet/users/users-register) and [authentication](http://docs.telerik.com/platform/backend-services/dotnet/users/users-authenticate) (Telerik Backend Services)
+- Authentication with [social login](http://docs.telerik.com/platform/backend-services/dotnet/users/social-login/introduction) providers (Facebook, Google, etc.) (Telerik Backend Services)
 - Using custom user account fields (Telerik Backend Services)
-- Basic app analytics (Telerik Analytics)
-- Tracking feature usage (Telerik Analytics)
+- Basic [app analytics](http://docs.telerik.com/platform/analytics/getting-started/introduction) (Telerik Analytics)
+- Tracking [feature use](http://docs.telerik.com/platform/analytics/client/reports/feature-use) (Telerik Analytics)
 
 To implement all the features listed above, the sample app utilizes the following Telerik SDKs:
 
-- Telerik Backend Services .NET SDK&mdash;to connect the app to Telerik Platform
+- [Telerik Backend Services .NET SDK](http://docs.telerik.com/platform/backend-services/dotnet/getting-started-dotnet-sdk)&mdash;to connect the app to Telerik Platform
 - Telerik Analytics .NET SDK&mdash;to connect the app to Telerik Platform
 
 # Screenshots

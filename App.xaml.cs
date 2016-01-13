@@ -59,7 +59,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
            
-            CloudProvider.Init(new EverliveProviderSettings() { UseHttps = ConnectionSettings.EverliveUseHttps, AppId = ConnectionSettings.EverliveAppId, UserType = typeof(CustomUser) });
+            CloudProvider.Init(new EverliveProviderSettings() { UseHttps = ConnectionSettings.EverliveUseHttps, AppId = ConnectionSettings.TelerikAppId, UserType = typeof(CustomUser) });
            
             // Analytics initialization
             if (ConnectionSettings.AnalyticsProjectKey != "your-analytics-project-key-here" || String.IsNullOrEmpty(ConnectionSettings.AnalyticsProjectKey))
@@ -152,11 +152,11 @@ namespace Telerik.Windows.Controls.Cloud.Sample
             // Remove this handler since it is no longer needed
             RootFrame.Navigated -= CompleteInitializePhoneApplication;
             
-            if (ConnectionSettings.EverliveAppId == "your-api-key-here" || String.IsNullOrEmpty(ConnectionSettings.EverliveAppId))
+            if (ConnectionSettings.TelerikAppId == "your-app-id-here" || String.IsNullOrEmpty(ConnectionSettings.TelerikAppId))
             {
                 System.Windows.MessageBox.Show(
-                    "Hi there!\n\nBefore you can use this demo, you must insert your API key in the code.\n\nPlease go to ConnectionSettings.cs and put the API key for your Backend Services Friends application.",
-                    "API key needed",
+                    "Hi there!\n\nBefore you can use this demo, you must insert your App ID in the code.\n\nPlease go to ConnectionSettings.cs and put the App ID Telerik Friends application.",
+                    "App ID needed",
                     MessageBoxButton.OK);
                 ConnectionSettings.ThrowError();
             }

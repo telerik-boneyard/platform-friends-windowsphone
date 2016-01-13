@@ -65,8 +65,8 @@ The Friends sample app comes fully functional, but to see it in action you must 
 This is a unique string that links the sample mobile app to your Telerik Platform account where all the data is read from/saved. To set it in the app code:
 
 1. Open the `ConnectionSettings.cs` file.
-2. Find the `public static string EverliveApiKey = "your-api-key-here";` line. 
-3. Replace `your-api-key-here` with the App ID of your Telerik Platform app.
+2. Find the `public static string TelerikAppId = "your-app-id-here";` line. 
+3. Replace `your-app-id-here` with the App ID of your Telerik Platform app.
 
 ## (Optional) Project Key for Telerik Analytics
 

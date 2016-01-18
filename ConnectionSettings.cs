@@ -10,7 +10,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample
         /// <summary> 
         /// Input your Backend Services App ID below to connect to your own app. 
         /// </summary> 
-        public static string EverliveAppId = "your-app-id-here";
+        public static string TelerikAppId = "your-app-id-here";
 
         /// <summary>
         /// The Telerik Analytics project identifier.

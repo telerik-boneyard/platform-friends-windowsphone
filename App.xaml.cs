@@ -59,7 +59,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
            
-            CloudProvider.Init(new EverliveProviderSettings() { UseHttps = ConnectionSettings.EverliveUseHttps, AppId = ConnectionSettings.TelerikAppId, UserType = typeof(CustomUser) });
+            CloudProvider.Init(new EverliveProviderSettings() { UseHttps = ConnectionSettings.EverliveUseHttps, ApiKey = ConnectionSettings.TelerikAppId, UserType = typeof(CustomUser) });
            
             // Analytics initialization
             if (ConnectionSettings.AnalyticsProjectKey != "your-analytics-project-key-here" || String.IsNullOrEmpty(ConnectionSettings.AnalyticsProjectKey))

@@ -24,7 +24,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample
 
         public static void ThrowError()
         {
-            throw new ArgumentException("Please enter your Backend Services project API key");
+            throw new ArgumentException("Please enter your Backend Services project app ID");
         }
     }
 }

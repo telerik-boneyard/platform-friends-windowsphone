@@ -21,7 +21,7 @@ namespace Telerik.Windows.Controls.Cloud.Sample.Views
             if (e.NavigationMode == System.Windows.Navigation.NavigationMode.New)
             {
                 var user = (CustomUser)this.NavigationContext.GetData();
-                if (user != null)
+                if (user != null && user.Id != CloudProvider.Current.CurrentUser.GetId())
                 {
                     this.DataContext = user;
                     this.currentUser = user;
